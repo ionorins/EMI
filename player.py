@@ -1,5 +1,10 @@
-import winsound
+import pygame, time
 
-winsound.PlaySound('sounds/anger.wav', winsound.SND_FILENAME)
+pygame.init()
+pygame.mixer.init()
+music = pygame.mixer.music
 
-time.sleep(10)
+while True:
+    a = raw_input()
+    music.load("sounds/" + a +".wav")
+    music.play()
