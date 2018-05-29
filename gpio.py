@@ -19,7 +19,7 @@ player.load(purr)
 purring = 0
 
 while True: # Run forever
-    print GPIO.input(10)
-    if GPIO.input(10) == GPIO.HIGH and not pygame.mixer.music.get_busy():
+    #print GPIO.input(10)
+    if GPIO.input(10) == GPIO.HIGH and not player.get_busy():
         player.play()
             

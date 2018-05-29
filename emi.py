@@ -61,7 +61,7 @@ while(True):
         #   cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
         '''
     # Face detected
-    if  (datetime.now() - last_check).seconds >= delta:
+    if  (datetime.now() - last_check).seconds >= delta and not player.get_busy():
         last_check = datetime.now()
         cv2.imwrite(img_file, frame)
 
@@ -95,7 +95,7 @@ while(True):
 
                 # Play response
                 player.load(path + 'sounds/' + emotions[0] + '.wav')
-                player.play(loops = random.randint(0,3))
+                player.play(loops = random.randint(0, 1))
                 print (emotions[0] + ' ' + str(emotions[1]))
 
        
