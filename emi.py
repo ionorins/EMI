@@ -1,4 +1,4 @@
-import cv2, requests, operator, os, pygame
+import cv2, requests, operator, os, pygame, random
 from datetime import datetime, timedelta
 
 # Player set up
@@ -95,9 +95,10 @@ while(True):
 
                 # Play response
                 player.load(path + 'sounds/' + emotions[0] + '.wav')
-                player.play()
+                player.play(loops = random.randint(0,3))
                 print (emotions[0] + ' ' + str(emotions[1]))
 
+       
         except Exception as e:
             print('Error:')
             print(e)
